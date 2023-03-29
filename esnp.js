@@ -20,7 +20,6 @@ export const rsInfo = {
         let info = await Promise.all(rsid.split(",").map(rsid => this.store.getItem(rsid)))
         info = info.reduce((pv, cv) => {
             if (cv) {
-                console.log(cv)
                 pv[`rs${cv.snp_id}`] = cv;
             }
             return pv;
@@ -37,7 +36,6 @@ async function lookupRSID(rsid) {
     rsid = rsid.split(",").filter(id => !Object.getOwnPropertyNames(cached_results).includes(id)).join(',')
     if (!!rsid) {
         rsid = rsid.replaceAll("rs", "")
-        console.log("... looking up ", rsid)
         let url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=snp&id=${rsid}&retmode=json`
         let res = await (await fetch(url)).json()
         rsInfo.cache(res.result)
@@ -54,6 +52,3 @@ export async function getLocation(rsid){
     },{})
 }
 
-// for debugging
-window.apikey = apikey
-window.getLocation=getLocation
