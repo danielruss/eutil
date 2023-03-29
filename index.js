@@ -1,7 +1,7 @@
 console.log(" ... loading index.js ...")
 
-import { apikey,getLocation } from "./esnp.js"
-
+import { apikey,getLocation,setToolInfo } from "./esnp.js"
+setToolInfo("NCI_DCEG_EUTIL_JSWRAPPER","druss@mail.nih.gov")
 
 function displayResults(results){
     const table = document.getElementById("locations")
