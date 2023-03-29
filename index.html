@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="./index.js" type="module"></script>
+</head>
+
+<body>
+    <div id="keyDiv">
+        <p>If you have an NCBI API, please enter it now.  Your key is saved in your browser,
+            but is only sent to NCBI during data access. No other servers have access to your
+            key.
+        </p>
+        <label for="apiKeyInp">NCBI API Key: </label>
+        <input type="text" id="apiKeyInp"> <input type="button" id="keyButton" value="Add Key">
+    </div>
+
+    <div id="rsDiv">
+        <p></p>
+        <label for="rsInp">Enter rs ids (comma seperated)</label>
+        <input type="text" id="rsInp"> <input type="button" id="rsButton" value="Get">
+    </div>
+
+
+    <div>
+        try: rs112750067,rs11385949,rs7
+    </div>
+</body>
+
+</html>
