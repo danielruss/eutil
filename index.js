@@ -23,9 +23,14 @@ document.getElementById("keyButton").addEventListener("click",(event)=>{
     if (key.length > 0){
         apikey.set(key)
         document.getElementById("keyFooter").classList.remove("d-none")
+        document.getElementById("keyButton").value = "Change key"
     }
-    //document.getElementById("keyDiv").style.display = (!key)?"block":"none"
-    //document.getElementById("rsDiv").style.display = (!key)?"none":"block"
+})
+
+document.getElementById("clearKeyButton").addEventListener("click",(event)=>{
+    document.getElementById("apiKeyInp").value = ""
+    document.getElementById("keyFooter").classList.add("d-none")
+    document.getElementById("keyButton").value = "Add key"
 })
 
 document.getElementById("rsButton").addEventListener("click",async (event)=>{
@@ -44,6 +49,7 @@ window.addEventListener("load", async (event)=>{
     if (key) {
         document.getElementById("pills-rs-tab").click()
         document.getElementById("keyFooter").classList.remove('d-none')
+        document.getElementById("keyButton").value = "Change key"
     }
     //document.getElementById("keyDiv").style.display = (!key)?"block":"none"
     //document.getElementById("rsDiv").style.display = (!key)?"none":"block"
