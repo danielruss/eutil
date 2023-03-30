@@ -14,7 +14,7 @@ export function setToolInfo(tool,email){
 export const apikey = {
     store: localforage.createInstance({ name: "esnp", storeName: "keyStore" }),
     get: async function () { return await this.store.getItem("key") },
-    set: async function (key) { return await this.store.setItem("key", key) }
+    set: async function (key) { await this.store.setItem("key", key) }
 }
 
 // holds info from dbsnp...
@@ -65,4 +65,3 @@ export async function getLocation(rsid){
 }
 
 window.tool_info=tool_info
-//rs112750067,rs56289060, rs112155239,rs112766696,rs117577454,rs55998931,rs62636508,rs114315702,rs58108140,rs10218492
