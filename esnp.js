@@ -59,7 +59,10 @@ async function lookupRSID(rsid) {
 export async function getLocation(rsid){
     const rsinfo = await lookupRSID(rsid)
     return Object.getOwnPropertyNames(rsinfo).reduce((prev,curr)=>{
-        prev[curr]=rsinfo[curr].chrpos
+        prev[curr]={
+            GRCh38:rsinfo[curr].chrpos,
+            GRCh37:rsinfo[curr].chrpos_prev_assm
+        }
         return prev;
     },{})
 }

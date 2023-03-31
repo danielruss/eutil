@@ -8,13 +8,16 @@ function displayResults(results){
     table.innerText=""
     let row=table.insertRow()
     row.insertCell().outerHTML="<th>rsid</th>"
-    row.insertCell().outerHTML="<th>location</th>"
+    row.insertCell().outerHTML="<th>location (GRCh38)</th>"
+    row.insertCell().outerHTML="<th>location (GRCh37)</th>"
     Object.entries(results).forEach( ([key,value])=>{
         row=table.insertRow()
         let cell = row.insertCell()
         cell.innerText=key
         cell = row.insertCell()
-        cell.innerText=value
+        cell.innerText=value.GRCh38
+        cell = row.insertCell()
+        cell.innerText=value.GRCh37
     })
 }
 
